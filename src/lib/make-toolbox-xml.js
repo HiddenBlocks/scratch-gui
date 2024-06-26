@@ -424,6 +424,9 @@ const control = function (isInitialSetup, isStage, targetId, colors) {
         <block id="wait_until" type="control_wait_until"/>
         <block id="repeat_until" type="control_repeat_until"/>
         <block id="while" type="control_while"/>
+        <block id="for_each" type="control_for_each"/>
+        ${blockSeparator}
+        <block type="control_all_at_once"/>
         ${blockSeparator}
         <block type="control_stop"/>
         ${blockSeparator}
@@ -508,6 +511,7 @@ const sensing = function (isInitialSetup, isStage, targetId, colors) {
         `}
         ${blockSeparator}
         <block id="loudness" type="sensing_loudness"/>
+        <block id="loud" type="sensing_loud"/>
         ${blockSeparator}
         <block id="timer" type="sensing_timer"/>
         <block type="sensing_resettimer"/>
