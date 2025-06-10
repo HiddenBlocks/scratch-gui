@@ -333,7 +333,7 @@ export default [
             <FormattedMessage
                 defaultMessage="Serves as a reference for loading core blocks as extensions."
                 description="Description for the 'CoreEx' extension"
-                id="gui.extension.music.description"
+                id="gui.extension.coreex.description"
             />
         ),
         featured: true
