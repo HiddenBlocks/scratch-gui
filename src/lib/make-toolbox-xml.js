@@ -136,6 +136,10 @@ const motion = function (isInitialSetup, isStage, targetId, colors) {
         <block id="${targetId}_xposition" type="motion_xposition"/>
         <block id="${targetId}_yposition" type="motion_yposition"/>
         <block id="${targetId}_direction" type="motion_direction"/>`}
+        ${blockSeparator}
+        <label text="Menus"></label>
+        <block type="motion_goto_menu"/>
+        <block type="motion_pointtowards_menu"/>
         ${categorySeparator}
     </category>
     `;
@@ -232,6 +236,13 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
+            <block type="looks_switchbackdroptoandwait">
+                <value name="BACKDROP">
+                    <shadow type="looks_backdrops">
+                        <field name="BACKDROP">${backdropName}</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="looks_nextbackdrop"/>
             ${blockSeparator}
             <block type="looks_changesizeby">
@@ -281,10 +292,17 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
         `}
         ${isStage ? `
             <block id="backdropnumbername" type="looks_backdropnumbername"/>
+            ${blockSeparator}
+            <label text="Menus"></label>
+            <block type="looks_backdrops"/>
         ` : `
             <block id="${targetId}_costumenumbername" type="looks_costumenumbername"/>
             <block id="backdropnumbername" type="looks_backdropnumbername"/>
             <block id="${targetId}_size" type="looks_size"/>
+            ${blockSeparator}
+            <label text="Menus"></label>
+            <block type="looks_costume"/>
+            <block type="looks_backdrops"/>
         `}
         ${categorySeparator}
     </category>
@@ -342,6 +360,9 @@ const sound = function (isInitialSetup, isStage, targetId, soundName, colors) {
             </value>
         </block>
         <block id="${targetId}_volume" type="sound_volume"/>
+        ${blockSeparator}
+        <label text="Menus"></label>
+        <block type="sound_sounds_menu"/>
         ${categorySeparator}
     </category>
     `;
@@ -358,6 +379,11 @@ const events = function (isInitialSetup, isStage, targetId, colors) {
             <block type="event_whenstageclicked"/>
         ` : `
             <block type="event_whenthisspriteclicked"/>
+            <block type="event_whentouchingobject">
+                <value name="TOUCHINGOBJECTMENU">
+                    <shadow type="sensing_touchingobjectmenu"/>
+                </value>
+            </block>
         `}
         <block type="event_whenbackdropswitchesto">
         </block>
@@ -382,6 +408,10 @@ const events = function (isInitialSetup, isStage, targetId, colors) {
               <shadow type="event_broadcast_menu"></shadow>
             </value>
         </block>
+        ${blockSeparator}
+        <label text="Menus"></label>
+        <block type="event_touchingobjectmenu"/>
+        <block type="event_broadcast_menu"/>
         ${categorySeparator}
     </category>
     `;
@@ -416,8 +446,14 @@ const control = function (isInitialSetup, isStage, targetId, colors) {
         <block type="control_if_else"/>
         <block id="wait_until" type="control_wait_until"/>
         <block id="repeat_until" type="control_repeat_until"/>
+        <block id="while" type="control_while"/>
+        <block id="for_each" type="control_for_each"/>
         ${blockSeparator}
         <block type="control_stop"/>
+        ${blockSeparator}
+        <block type="control_get_counter"/>
+        <block type="control_incr_counter"/>
+        <block type="control_clear_counter"/>
         ${blockSeparator}
         ${isStage ? `
             <block type="control_create_clone_of">
@@ -434,6 +470,9 @@ const control = function (isInitialSetup, isStage, targetId, colors) {
             </block>
             <block type="control_delete_this_clone"/>
         `}
+        ${blockSeparator}
+        <label text="Menus"></label>
+        <block type="control_create_clone_of_menu"/>
         ${categorySeparator}
     </category>
     `;
@@ -499,6 +538,7 @@ const sensing = function (isInitialSetup, isStage, targetId, colors) {
             ${blockSeparator}
         `}
         ${blockSeparator}
+        <block type="sensing_loud"/>
         <block id="loudness" type="sensing_loudness"/>
         ${blockSeparator}
         <block id="timer" type="sensing_timer"/>
@@ -514,6 +554,10 @@ const sensing = function (isInitialSetup, isStage, targetId, colors) {
         <block type="sensing_dayssince2000"/>
         ${blockSeparator}
         <block type="sensing_username"/>
+        ${blockSeparator}
+        <label text="Menus"></label>
+        <block type="sensing_touchingobjectmenu"/>
+        <block type="sensing_keyoptions"/>
         ${categorySeparator}
     </category>
     `;
@@ -705,6 +749,11 @@ const operators = function (isInitialSetup, isStage, targetId, colors) {
                     <field name="NUM"/>
                 </shadow>
             </value>
+        </block>
+        ${blockSeparator}
+        <label text="New Line"></label>
+        <block type="event_touchingobjectmenu">
+            <field name="TOUCHINGOBJECTMENU">\\n</field>
         </block>
         ${categorySeparator}
     </category>

@@ -317,5 +317,25 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="CoreEx"
+                description="Name for the 'CoreEx' extension"
+                id="gui.extension.coreex.name"
+            />
+        ),
+        extensionId: 'coreExample',
+        iconURL: musicIconURL,
+        insetIconURL: musicInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Serves as a reference for loading core blocks as extensions."
+                description="Description for the 'CoreEx' extension"
+                id="gui.extension.music.description"
+            />
+        ),
+        featured: true
     }
 ];

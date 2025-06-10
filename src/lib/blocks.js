@@ -89,7 +89,9 @@ export default function (vm, useCatBlocks) {
 
     const costumesMenu = function () {
         if (vm.editingTarget && vm.editingTarget.getCostumes().length > 0) {
-            return vm.editingTarget.getCostumes().map(costume => [costume.name, costume.name]);
+            return vm.editingTarget.getCostumes().map(costume => [costume.name, costume.name])
+                .concat([['next costume', 'next costume'],
+                    ['previous costume', 'previous costume']]);
         }
         return [['', '']];
     };
@@ -180,6 +182,7 @@ export default function (vm, useCatBlocks) {
     ScratchBlocks.Blocks.motion_pointtowards_menu.init = function () {
         const mouse = ScratchBlocks.ScratchMsgs.translate('MOTION_POINTTOWARDS_POINTER', 'mouse-pointer');
         const json = jsonForMenuBlock('TOWARDS', spriteMenu, motionColors, [
+            ['random direction', '_random_'],
             [mouse, '_mouse_']
         ]);
         this.jsonInit(json);
