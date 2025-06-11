@@ -2,12 +2,12 @@
   "name": "scratch-gui",
   "version": "5.1.77",
   "description": "Graphical User Interface for creating and running Scratch 3.0 projects",
-  "author": "Massachusetts Institute of Technology",
+  "author": "Gabs",
   "license": "AGPL-3.0-only",
-  "homepage": "https://github.com/scratchfoundation/scratch-gui#readme",
+  "homepage": "https://hiddenblocks.github.io/scratch-gui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scratchfoundation/scratch-gui.git"
+    "url": "https://github.com/hiddenblocks/scratch-gui.git"
   },
   "main": "./dist/scratch-gui.js",
   "scripts": {
