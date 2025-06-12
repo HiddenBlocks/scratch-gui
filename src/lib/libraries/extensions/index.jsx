@@ -328,7 +328,6 @@ export default [
         ),
         extensionId: 'coreExample',
         iconURL: musicIconURL,
-        insetIconURL: musicInsetIconURL,
         description: (
             <FormattedMessage
                 defaultMessage="Serves as a reference for loading core blocks as extensions."

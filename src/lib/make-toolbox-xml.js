@@ -5,6 +5,8 @@ const categorySeparator = '<sep gap="36"/>';
 
 const blockSeparator = '<sep gap="36"/>'; // At default scale, about 28px
 
+const newLine = '\n';
+
 /* eslint-disable no-unused-vars */
 const motion = function (isInitialSetup, isStage, targetId, colors) {
     const stageSelected = ScratchBlocks.ScratchMsgs.translate(
@@ -447,7 +449,13 @@ const control = function (isInitialSetup, isStage, targetId, colors) {
         <block id="wait_until" type="control_wait_until"/>
         <block id="repeat_until" type="control_repeat_until"/>
         <block id="while" type="control_while"/>
-        <block id="for_each" type="control_for_each"/>
+        <block id="for_each" type="control_for_each">
+            <value name="VALUE">
+                <shadow type="math_whole_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="control_stop"/>
         ${blockSeparator}
@@ -753,7 +761,7 @@ const operators = function (isInitialSetup, isStage, targetId, colors) {
         ${blockSeparator}
         <label text="New Line"></label>
         <block type="event_touchingobjectmenu">
-            <field name="TOUCHINGOBJECTMENU">\\n</field>
+            <field name="TOUCHINGOBJECTMENU">${newLine}</field>
         </block>
         ${categorySeparator}
     </category>
