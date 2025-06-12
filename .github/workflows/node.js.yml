@@ -22,6 +22,7 @@ jobs:
     - name: Setup GitHub Pages
       id: pages
       uses: actions/configure-pages@v1
+    - run: npm run prepublish
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
