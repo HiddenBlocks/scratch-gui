@@ -6,6 +6,7 @@ const categorySeparator = '<sep gap="36"/>';
 const blockSeparator = '<sep gap="36"/>'; // At default scale, about 28px
 
 const newLine = '\n';
+const tabCharacter = '\t';
 
 /* eslint-disable no-unused-vars */
 const motion = function (isInitialSetup, isStage, targetId, colors) {
@@ -762,6 +763,10 @@ const operators = function (isInitialSetup, isStage, targetId, colors) {
         <label text="New Line"></label>
         <block type="event_touchingobjectmenu">
             <field name="TOUCHINGOBJECTMENU">${newLine}</field>
+        </block>
+        <label text="Tab Character"></label>
+        <block type="event_touchingobjectmenu">
+            <field name="TOUCHINGOBJECTMENU">${tabCharacter}</field>
         </block>
         ${categorySeparator}
     </category>

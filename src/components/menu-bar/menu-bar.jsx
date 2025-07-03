@@ -572,7 +572,7 @@ class MenuBar extends React.Component {
                             </MenuBarMenu>
 
                         </div>
-                        {this.props.isTotallyNormal && (
+                        {/*this.props.isTotallyNormal*/true && (
                             <div
                                 className={classNames(styles.menuBarItem, styles.hoverable, {
                                     [styles.active]: this.props.modeMenuOpen
